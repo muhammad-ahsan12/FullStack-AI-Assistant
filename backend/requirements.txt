@@ -1,0 +1,17 @@
+langchain
+langchain-core
+langchain-community
+langgraph
+langchain-google-genai
+langchain-groq
+pydantic
+python-dotenv
+requests
+numpy
+faiss-cpu
+duckduckgo-search
+google-search-results
+wikipedia
+fastapi
+uvicorn
+langgraph-checkpoint-sqlite
