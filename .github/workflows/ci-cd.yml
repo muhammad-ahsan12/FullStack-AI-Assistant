@@ -36,10 +36,11 @@ jobs:
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
+      # ✅ Update: Run pytest without requiring a tests/ folder
       - name: Run Backend Tests
         run: |
           export PYTHONPATH=.
-          pytest tests/ -v
+          pytest -v  # will auto-discover any test_*.py files
 
   # =======================
   # Frontend Build & Tests
@@ -73,7 +74,7 @@ jobs:
       - name: Run TypeScript Check
         run: npx tsc --noEmit
 
-      # Optional if you have frontend tests
+      # Optional: run frontend tests if available
       - name: Run Frontend Tests
         run: npm test --if-present
 
@@ -110,7 +111,7 @@ jobs:
       - name: Check all jobs status
         run: |
           echo "Backend tests: ${{ needs.backend-test.result }}"
-          echo "Frontend tests: ${{ needs.frontend-test.result }}"
+          echo "Frontend tests: ${{ needs-frontend-test.result }}"
           echo "Security scan: ${{ needs.security-scan.result }}"
 
           if [[ "${{ needs.backend-test.result }}" == "success" && \
