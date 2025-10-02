@@ -1,4 +1,4 @@
-# AI Assistant Chat Bot 🤖
+# FullStack AI Assistant Chat Bot 🤖
 
 A full-stack AI-powered chat application that supports text conversations, image analysis, PDF processing, and AI image generation. Built with **FastAPI** (backend) and **Next.js** (frontend) using modern web technologies.
 
@@ -227,20 +227,6 @@ The application uses a sophisticated routing system that automatically determine
 - Modern chat interface with smooth animations
 - Theme support with CSS custom properties
 
-## 🔧 Configuration
-
-### Backend Configuration (`config.py`)
-```python
-# AI Models
-text_model = ChatGroq(model="llama-3.3-70b-versatile")
-vision_model = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
-
-# Tools
-tools = [DuckDuckGoSearchResults(), WikipediaQueryRun()]
-
-# Memory
-checkpointer = InMemorySaver()
-```
 
 ### Frontend Configuration
 - API base URL: `http://localhost:8000`
@@ -267,44 +253,8 @@ checkpointer = InMemorySaver()
    - Verify internet connectivity for external APIs
    - Check API key quotas and limits
 
-### Backend Logs
-```bash
-# Enable detailed logging
-uvicorn main:app --reload --log-level debug
-```
 
-### Frontend Development
-```bash
-# Check for TypeScript errors
-npm run lint
 
-# Build for production
-npm run build
-```
-
-## 📈 Performance Optimization
-
-### Backend
-- Async/await for non-blocking operations
-- Efficient file processing with streaming
-- Connection pooling for external APIs
-
-### Frontend
-- React 18 concurrent features
-- Image lazy loading
-- Component code splitting
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
@@ -315,10 +265,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **shadcn/ui** for beautiful UI components
 - **Vercel** for Next.js framework
 
-## 📞 Support
-
-For support, email [your-email] or create an issue in the repository.
-
----
-
-**Made with ❤️ using FastAPI and Next.js**
