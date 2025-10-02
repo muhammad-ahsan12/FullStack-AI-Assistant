@@ -10,7 +10,7 @@ A full-stack AI-powered chat application that supports text conversations, image
 
 ## 🎥 Demo Video
 
-[▶️ Watch the demo](./backend/demo (2).mp4)
+[▶️ Watch the demo](./backend/demo(2).mp4)
 
 ## ✨ Features
 
