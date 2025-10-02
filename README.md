@@ -4,6 +4,10 @@ A full-stack AI-powered chat application that supports text conversations, image
 
 ![AI Assistant Demo](https://img.shields.io/badge/Status-Active-green) ![Python](https://img.shields.io/badge/Python-3.8+-blue) ![Next.js](https://img.shields.io/badge/Next.js-14+-black) ![FastAPI](https://img.shields.io/badge/FastAPI-Latest-009688)
 
+## 🏗️ Architecture
+
+![Workflow](./backend/workflow.png)
+
 ## ✨ Features
 
 ### 🗨️ **Multi-Modal Chat Experience**
