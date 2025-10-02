@@ -8,6 +8,10 @@ A full-stack AI-powered chat application that supports text conversations, image
 
 ![Workflow](./backend/workflow.png)
 
+## 🎥 Demo Video
+
+[▶️ Watch the demo](./backend/demo (2).mp4)
+
 ## ✨ Features
 
 ### 🗨️ **Multi-Modal Chat Experience**
