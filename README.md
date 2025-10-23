@@ -176,47 +176,6 @@ curl -X POST "http://localhost:8000/pdf" \
 
 ## 📁 Project Structure
 
-```
-bot/
-├── backend/
-│   ├─ main.py              # FastAPI application & endpoints
-│   ├── config.py            # Model and tool configurations
-│   ├── models.py            # Pydantic request models
-│   ├── graphs.py            # LangGraph workflow definitions
-│   ├── requirements.txt     # Python dependencies
-│   └── chatbot.ipynb        # Development notebook
-├── frontend/
-│   ├── app/
-│   │   ├── page.tsx         # Main chat interface
-│   │   ├── layout.tsx       # App layout and metadata
-│   │   └── globals.css      # Global styles
-│   ├── components/
-│   │   ├── ui/              # shadcn/ui components
-│   │   ├── chat-window.tsx  # Chat interface component
-│   │   ├── chat-input.tsx   # Message input with file upload
-│   │   ├── message.tsx      # Message display component
-│   │   └── sidebar.tsx      # Conversation history sidebar
-│   ├── lib/
-│   │   ├── api.ts           # API utilities
-│   │   └── utils.ts         # Helper functions
-│   └── package.json         # Node.js dependencies
-└── README.md               # This file
-```
-
-## File structure (high level)
- - `backend/`
-   - `main.py` — FastAPI app and endpoints
-   - `graphs.py` — langgraph StateGraph and nodes
-   - `config.py` — model/tool configuration
-   - `requirements.txt` — backend Python deps
-   - `auth/` — simple auth implementation (signup/login, hashing, token)
- - `frontend/`
-   - `app/` — Next.js app routes
-   - `components/` — React UI components (auth form, chat window, chat input)
-   - `public/` — static files
-
-### Full project tree (important files)
-Below is a curated view of the repository layout and the most important files you may want to inspect or modify.
 
 ```
 .
@@ -259,9 +218,19 @@ Below is a curated view of the repository layout and the most important files yo
 │  └─ public/
 ```
 
-Notes:
-- `backend/.env` in your workspace currently contains API keys — these are sensitive. Move secrets to a proper secret store and rotate keys if necessary.
-- The backend Dockerfile exposes port `7860` by default (the uvicorn command in the Dockerfile uses port 7860). The local uvicorn run instructions in this README use port `8000`.
+
+## File structure (high level)
+ - `backend/`
+   - `main.py` — FastAPI app and endpoints
+   - `graphs.py` — langgraph StateGraph and nodes
+   - `config.py` — model/tool configuration
+   - `requirements.txt` — backend Python deps
+   - `auth/` — simple auth implementation (signup/login, hashing, token)
+ - `frontend/`
+   - `app/` — Next.js app routes
+   - `components/` — React UI components (auth form, chat window, chat input)
+   - `public/` — static files
+
 
 
 ## 🎨 Key Features Deep Dive
