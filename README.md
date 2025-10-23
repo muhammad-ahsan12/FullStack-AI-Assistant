@@ -179,7 +179,7 @@ curl -X POST "http://localhost:8000/pdf" \
 ```
 bot/
 ├── backend/
-│   ├── main.py              # FastAPI application & endpoints
+│   ├─ main.py              # FastAPI application & endpoints
 │   ├── config.py            # Model and tool configurations
 │   ├── models.py            # Pydantic request models
 │   ├── graphs.py            # LangGraph workflow definitions
@@ -202,6 +202,67 @@ bot/
 │   └── package.json         # Node.js dependencies
 └── README.md               # This file
 ```
+
+## File structure (high level)
+ - `backend/`
+   - `main.py` — FastAPI app and endpoints
+   - `graphs.py` — langgraph StateGraph and nodes
+   - `config.py` — model/tool configuration
+   - `requirements.txt` — backend Python deps
+   - `auth/` — simple auth implementation (signup/login, hashing, token)
+ - `frontend/`
+   - `app/` — Next.js app routes
+   - `components/` — React UI components (auth form, chat window, chat input)
+   - `public/` — static files
+
+### Full project tree (important files)
+Below is a curated view of the repository layout and the most important files you may want to inspect or modify.
+
+```
+.
+├─ .env.example
+├─ README.md
+├─ backend/
+│  ├─ .env                # (local) API keys used by the backend
+│  ├─ Dockerfile
+│  ├─ config.py
+│  ├─ graphs.py
+│  ├─ main.py
+│  ├─ models.py
+│  ├─ requirements.txt
+│  ├─ users.db            # SQLite DB used by auth (auto-created)
+│  └─ auth/
+│     ├─ __init__.py
+│     ├─ auth_routes.py   # signup / login routes
+│     ├─ database.py      # SQLAlchemy setup (sqlite)
+│     ├─ hashing.py       # argon2 password hashing
+│     ├─ models.py        # SQLAlchemy user model
+│     └─ token.py         # JWT helper (has hardcoded secret)
+├─ frontend/
+│  ├─ app/
+│  │  ├─ layout.tsx
+│  │  ├─ page.tsx         # redirect / token check
+│  │  ├─ login/page.tsx
+│  │  ├─ signup/page.tsx
+│  │  └─ chat/page.tsx    # main chat UI page
+│  ├─ components/
+│  │  ├─ auth-form.tsx
+│  │  ├─ chat-input.tsx
+│  │  ├─ chat-window.tsx
+│  │  ├─ message.tsx
+│  │  ├─ sidebar.tsx
+│  │  └─ theme-provider.tsx
+│  ├─ lib/
+│  │  ├─ api.ts           # small fetch wrapper
+│  │  └─ utils.ts         # ui helpers (cn)
+│  ├─ package.json
+│  └─ public/
+```
+
+Notes:
+- `backend/.env` in your workspace currently contains API keys — these are sensitive. Move secrets to a proper secret store and rotate keys if necessary.
+- The backend Dockerfile exposes port `7860` by default (the uvicorn command in the Dockerfile uses port 7860). The local uvicorn run instructions in this README use port `8000`.
+
 
 ## 🎨 Key Features Deep Dive
 
@@ -264,4 +325,3 @@ The application uses a sophisticated routing system that automatically determine
 - **Pollinations.ai** for image generation
 - **shadcn/ui** for beautiful UI components
 - **Vercel** for Next.js framework
-
